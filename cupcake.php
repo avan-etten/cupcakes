@@ -11,8 +11,17 @@ if (!empty($_POST)){
     $isValid = false;
     if(empty($_POST['name'])){
         echo "<p>Please provide a name</p>";
+        $isValid = false;
     } else {
         $username = $_POST['name'];
+        $isValid = true;
+    }
+
+    if (!isset($_POST['flavors'])){
+        echo "<p>Please select a flavor</p>";
+        $isValid = false;
+    } else {
+        $flavors = $_POST['flavors'];
         $isValid = true;
     }
     return $isValid;
