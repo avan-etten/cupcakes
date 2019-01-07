@@ -5,7 +5,7 @@
  * Date: 1/7/2019
  * Time: 10:13 AM
  */
-
+print_r($_POST);
 
 
 function checkboxes(){
@@ -15,7 +15,7 @@ function checkboxes(){
 
     foreach($flavors as $flavor => $name){
         echo '<label>';
-        echo '<input type="checkbox" value="$flavor" name="flavors[]">'; echo $name;
-        echo '<label><br>';
+        echo '<input type="checkbox" value=' . "$flavor" . ' name=flavors[]>' . "$name";
+        echo '</label><br>';
     }
 }
