@@ -5,7 +5,7 @@
  * Date: 1/7/2019
  * Time: 9:51 AM
  */
-include "cupcake.php";
+require "cupcake.php";
 ?>
 <!doctype html>
 <html lang="en">
@@ -17,10 +17,12 @@ include "cupcake.php";
     <title>Cupcakes</title>
 </head>
 <body>
-<form id="cupcakeform" method="get" action="">
+<form id="cupcakeform" method="post" action="">
     <fieldset>
+        <label>Name:
         <input type="text" size="20" maxlength="20" name="name" id="name">
-        <br>
+        </label><br>
+        <h2>Flavors: </h2>
         <!--<input type="checkbox">-->
         <?php //checkboxes
         checkboxes();
