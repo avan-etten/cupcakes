@@ -5,6 +5,7 @@
  * Date: 1/7/2019
  * Time: 9:51 AM
  */
+include "cupcake.php";
 ?>
 <!doctype html>
 <html lang="en">
@@ -16,21 +17,13 @@
     <title>Cupcakes</title>
 </head>
 <body>
-<form>
+<form id="cupcakeform" method="get" action="">
     <fieldset>
         <input type="text" size="20" maxlength="20" name="name" id="name">
         <br>
         <!--<input type="checkbox">-->
         <?php //checkboxes
-        $flavors = array("grasshopper" => "The Grasshopper", "maple" => "Whiskey Maple Bacon"
-        , "carrot" => "Carrot Walnut", "caramel" => "Salted Caramel Cupcake", "velvet" => "Red Velvet",
-            "lemon" => "Lemon Drop", "tiramisu" => "Tiramisu");
-        foreach($flavors as $flavor => $name){
-            echo '<label>';
-            echo '<input type="checkbox" value="$flavor" name="flavors[]">'; echo $name;
-            echo '<label><br>';
-        }
-
+        checkboxes();
         ?>
     </fieldset>
     <input type="submit" id="order" value="Order">
