@@ -17,7 +17,7 @@ if (!empty($_POST)){
         $isValid = true;
     }
 
-    if (!isset($_POST['flavors'])){
+    if (!isset($_POST['flavors']) || !validateFlavors()){
         echo "<p>Please select a flavor</p>";
         $isValid = false;
     } else {
@@ -27,6 +27,21 @@ if (!empty($_POST)){
     return $isValid;
 }
 
+function validateFlavors(){
+    $flavorsValid = false;
+    $flavorCount = 0;
+    $validFlavors = array("grasshopper", "maple", "carrot", "caramel", "velvet", "lemon", "tiramisu");
+    foreach ($_POST['flavors'] as $flavor){
+        if (in_array($flavor, $validFlavors)){
+            $flavorCount++;
+        }
+    }
+    if($flavorCount != 0) {
+        $flavorsValid = true;
+    }
+    return $flavorsValid;
+}
+
 function checkboxes(){
     $flavors = array("grasshopper" => "The Grasshopper", "maple" => "Whiskey Maple Bacon",
         "carrot" => "Carrot Walnut", "caramel" => "Salted Caramel Cupcake", "velvet" => "Red Velvet",
@@ -34,7 +49,11 @@ function checkboxes(){
 
     foreach($flavors as $flavor => $name){
         echo '<label>';
-        echo '<input type="checkbox" value=' . "$flavor" . ' name=flavors[]>' . "$name";
+        echo '<input type="checkbox" value=' . "$flavor" . ' name=flavors[] ';
+        if (in_array($flavor, $_POST['flavors'])){
+            echo 'checked="checked"';
+        }
+        echo ">$name";
         echo '</label><br>';
     }
 }

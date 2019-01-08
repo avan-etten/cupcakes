@@ -20,7 +20,7 @@ require "cupcake.php";
 <form id="cupcakeform" method="post" action="">
     <fieldset>
         <label>Name:
-        <input type="text" size="20" maxlength="20" name="name" id="name">
+        <input type="text" size="20" maxlength="20" name="name" id="name" <?php echo "value=" . $_POST['name']?>>
         </label><br>
         <h2>Flavors: </h2>
         <!--<input type="checkbox">-->
