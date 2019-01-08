@@ -7,6 +7,13 @@
  */
 require "cupcake.php";
 ?>
+<!--
+Author: Alec Van Etten
+Date: 1/7/2019
+Assn: 1-Cupcakes
+
+This is a form for ordering cupcakes, cupcakes are $3.50 each and come in 7 flavors.
+-->
 <!doctype html>
 <html lang="en">
 <head>
